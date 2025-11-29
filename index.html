@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Infinitcon</title>
+    <link rel="stylesheet" href="style.css">
+<!/-- Font Awesome (icones) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <img src="Infinitconlogo.jpg" alt="Logo InfinityCon">
+
+  <h2>InfinityCon – Realize seus sonhos agora com consórcio já contemplado!</h2>
+
+  <p><strong>Mais do que uma cota contemplada – oferecemos segurança, agilidade na transferência e a chance de realizar seus sonhos hoje, sem pagar juros abusivos.</strong></p>
+
+  <!-- Botão Embracon -->
+  <a href="https://www.embracon.com.br/parceiro/matheus.bastosme?uuid=eb9007e7-fb77-4aae-9d49-131bf088a8ff&login_parceiro=matheus.bastosme" target="_blank">
+    <button><i class="fas fa-building"></i>Embracon</button>
+  </a>
+
+  <!-- Botão Instagram -->
+  <a href="https://www.instagram.com/infinitycon_investimentos/" target="_blank">
+    <button><i class="fab fa-instagram"></i> Instagram</button>
+  </a>
+
+  <!-- Botão WhatsApp -->
+  <a href="https://wa.me/5541997116944" target="_blank">
+    <button><i class="fab fa-whatsapp"></i> WhatsApp</button>
+  </a>
+  
+  <h3>Tire suas dúvidas conosco</h3>
+  <br>
+
+  <form action="https://formsubmit.co/toblergabriel08@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Nome completo" required>
+    <input type="email" name="email" placeholder="Seu E-mail" required>
+
+    <!-- Campo de telefone com máscara -->
+    <input type="text" id="telefone" name="telefone" placeholder="Seu número de telefone" required>
+
+    <!-- Anti-spam (invisível para humanos) -->
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- Redirecionamento após envio -->
+    <input type="hidden" name="_next" value="https://www.instagram.com/infinitycon_investimentos/">
+
+    <!-- Desativa o captcha padrão do FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <!-- SCRIPT DE MÁSCARA E VALIDAÇÃO -->
+  <script>
+    const telefoneInput = document.getElementById('telefone');
+
+    telefoneInput.addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, ''); // remove tudo que não for número
+
+      // Aplica a máscara (XX) XXXXX-XXXX
+      if (value.length > 11) value = value.slice(0, 11);
+      if (value.length > 6) {
+        value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
+      } else if (value.length > 2) {
+        value = value.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+      } else {
+        value = value.replace(/^(\d*)/, '($1');
+      }
+
+      e.target.value = value;
+    });
+
+    // Validação antes do envio do formulário
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (e) {
+      const tel = telefoneInput.value.replace(/\D/g, '');
+      // Verifica se o número está completo e se começa com 9
+      if (tel.length === 11 && tel[2] !== '9') {
+        e.preventDefault();
+        alert('O número de celular deve começar com 9 após o DDD. Ex: (41) 9XXXX-XXXX');
+      } else if (tel.length < 11) {
+        e.preventDefault();
+        alert('Digite um número de telefone válido com DDD e 9 dígitos. Ex: (41) 9XXXX-XXXX');
+      }
+    });
+  </script>
+
+</body>
+</html>

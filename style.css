@@ -1,0 +1,96 @@
+/* ================================
+   ESTILO GERAL
+================================ */
+body {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    color: white;
+    font-size: 24px;
+}
+
+p {
+    color: white;
+    font-size: 16px;
+}
+
+img {
+    width: 350px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: white;
+    margin-top: 30px;
+}
+
+/* ================================
+   BOTÕES COM ÍCONES
+================================ */
+button {
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* ================================
+   FORMULÁRIO DE CONTATO
+================================ */
+form {
+    max-width: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Campo de telefone destacado levemente */
+#telefone {
+    letter-spacing: 1px;
+}
+
+/* Botão ENVIAR */
+form button[type="submit"] {
+    background-color: #003366;
+    color: white;
+    border: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #002244;
+}
